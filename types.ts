@@ -1,3 +1,5 @@
+export type Source = string|number;
+
 export type Deferrals = {
   defer: () => void;
   update: (message: string) => void;
