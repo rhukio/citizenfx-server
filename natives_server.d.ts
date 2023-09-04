@@ -133,7 +133,7 @@ declare function ApplyForceToEntity(entity: number, forceType: number, x: number
  * @param playerSrc The player handle
  * @return True or false.
  */
-declare function CanPlayerStartCommerceSession(playerSrc: string): boolean;
+declare function CanPlayerStartCommerceSession(playerSrc: string|number): boolean;
 
 /**
  * Cancels the currently executing event.
@@ -290,7 +290,7 @@ declare function DoesEntityExist(entity: number): boolean;
  * Returns whether or not the player exists
  * @return True if the player exists, false otherwise
  */
-declare function DoesPlayerExist(playerSrc: string): boolean;
+declare function DoesPlayerExist(playerSrc: string|number): boolean;
 
 /**
  * Requests whether or not the player owns the specified SKU.
@@ -298,7 +298,7 @@ declare function DoesPlayerExist(playerSrc: string): boolean;
  * @param skuId The ID of the SKU.
  * @return A boolean.
  */
-declare function DoesPlayerOwnSku(playerSrc: string, skuId: number): boolean;
+declare function DoesPlayerOwnSku(playerSrc: string|number, skuId: number): boolean;
 
 /**
  * Requests whether or not the player owns the specified package.
@@ -306,12 +306,12 @@ declare function DoesPlayerOwnSku(playerSrc: string, skuId: number): boolean;
  * @param skuId The package ID on Tebex.
  * @return A boolean.
  */
-declare function DoesPlayerOwnSkuExt(playerSrc: string, skuId: number): boolean;
+declare function DoesPlayerOwnSkuExt(playerSrc: string|number, skuId: number): boolean;
 
 /**
  * DROP_PLAYER
  */
-declare function DropPlayer(playerSrc: string, reason: string): void;
+declare function DropPlayer(playerSrc: string|number, reason: string): void;
 
 /**
  * DUPLICATE_FUNCTION_REFERENCE
@@ -369,7 +369,7 @@ declare function FreezeEntityPosition(entity: number, toggle: boolean): void;
  * GET_AIR_DRAG_MULTIPLIER_FOR_PLAYERS_VEHICLE
  * @param playerSrc The player handle
  */
-declare function GetAirDragMultiplierForPlayersVehicle(playerSrc: string): number;
+declare function GetAirDragMultiplierForPlayersVehicle(playerSrc: string|number): number;
 
 /**
  * Returns all object handles known to the server.
@@ -684,7 +684,7 @@ declare function GetLastPedInVehicleSeat(vehicle: number, seatIndex: number): nu
 /**
  * GET_NUM_PLAYER_IDENTIFIERS
  */
-declare function GetNumPlayerIdentifiers(playerSrc: string): number;
+declare function GetNumPlayerIdentifiers(playerSrc: string|number): number;
 
 /**
  * GET_NUM_PLAYER_INDICES
@@ -829,7 +829,7 @@ declare function GetPlayerGuid(playerSrc: string): string;
 /**
  * GET_PLAYER_IDENTIFIER
  */
-declare function GetPlayerIdentifier(playerSrc: string, identifier: number): string;
+declare function GetPlayerIdentifier(playerSrc: string|number, identifier: number): string;
 
 /**
  * Get an identifier from a player by the type of the identifier.
@@ -837,31 +837,31 @@ declare function GetPlayerIdentifier(playerSrc: string, identifier: number): str
  * @param identifierType The string to match in an identifier, this can be `"license"` for example.
  * @return The identifier that matches the string provided
  */
-declare function GetPlayerIdentifierByType(playerSrc: string, identifierType: string): string;
+declare function GetPlayerIdentifierByType(playerSrc: string|number, identifierType: string): string;
 
 /**
  * GET_PLAYER_INVINCIBLE
  * @param playerSrc The player handle
  * @return A boolean to tell if the player is invincible.
  */
-declare function GetPlayerInvincible(playerSrc: string): boolean;
+declare function GetPlayerInvincible(playerSrc: string|number): boolean;
 
 /**
  * GET_PLAYER_LAST_MSG
  */
-declare function GetPlayerLastMsg(playerSrc: string): number;
+declare function GetPlayerLastMsg(playerSrc: string|number): number;
 
 /**
  * GET_PLAYER_MAX_ARMOUR
  * @param playerSrc The player handle
  */
-declare function GetPlayerMaxArmour(playerSrc: string): number;
+declare function GetPlayerMaxArmour(playerSrc: string|number): number;
 
 /**
  * GET_PLAYER_MAX_HEALTH
  * @param playerSrc The player handle
  */
-declare function GetPlayerMaxHealth(playerSrc: string): number;
+declare function GetPlayerMaxHealth(playerSrc: string|number): number;
 
 /**
  * A getter for [SET_PLAYER_MELEE_WEAPON_DAMAGE_MODIFIER](#\_0x4A3DC7ECCC321032).
@@ -873,17 +873,17 @@ declare function GetPlayerMeleeWeaponDamageModifier(playerId: string): number;
 /**
  * GET_PLAYER_NAME
  */
-declare function GetPlayerName(playerSrc: string): string;
+declare function GetPlayerName(playerSrc: string|number): string;
 
 /**
  * GET_PLAYER_PED
  */
-declare function GetPlayerPed(playerSrc: string): number;
+declare function GetPlayerPed(playerSrc: string|number): number;
 
 /**
  * GET_PLAYER_PING
  */
-declare function GetPlayerPing(playerSrc: string): number;
+declare function GetPlayerPing(playerSrc: string|number): number;
 
 /**
  * Gets the routing bucket for the specified player.
@@ -891,13 +891,13 @@ declare function GetPlayerPing(playerSrc: string): number;
  * @param playerSrc The player to get the routing bucket for.
  * @return The routing bucket ID.
  */
-declare function GetPlayerRoutingBucket(playerSrc: string): number;
+declare function GetPlayerRoutingBucket(playerSrc: string|number): number;
 
 /**
  * GET_PLAYER_TEAM
  * @param playerSrc The player handle
  */
-declare function GetPlayerTeam(playerSrc: string): number;
+declare function GetPlayerTeam(playerSrc: string|number): number;
 
 /**
  * Gets the amount of time player has spent evading the cops.
@@ -909,7 +909,7 @@ declare function GetPlayerTeam(playerSrc: string): number;
 Returns 0, if lastPursuit == False and the player has a wanted level, but the pursuit has not started yet
 Otherwise, will return the milliseconds of the pursuit.
  */
-declare function GetPlayerTimeInPursuit(playerSrc: string, lastPursuit: boolean): number;
+declare function GetPlayerTimeInPursuit(playerSrc: string|number, lastPursuit: boolean): number;
 
 /**
  * Gets a player's token. Tokens can be used to enhance banning logic, however are specific to a server.
@@ -917,21 +917,21 @@ declare function GetPlayerTimeInPursuit(playerSrc: string, lastPursuit: boolean)
  * @param index Index between 0 and GET_NUM_PLAYER_TOKENS.
  * @return A token value.
  */
-declare function GetPlayerToken(playerSrc: string, index: number): string;
+declare function GetPlayerToken(playerSrc: string|number, index: number): string;
 
 /**
  * Gets the current known coordinates for the specified player from cops perspective. This native is used server side when using OneSync.
  * @param playerSrc The target player
  * @return The player's position known by police. Vector zero if the player has no wanted level.
  */
-declare function GetPlayerWantedCentrePosition(playerSrc: string): number[];
+declare function GetPlayerWantedCentrePosition(playerSrc: string|number): number[];
 
 /**
  * Returns given players wanted level server-side.
  * @param playerSrc The target player
  * @return The wanted level
  */
-declare function GetPlayerWantedLevel(playerSrc: string): number;
+declare function GetPlayerWantedLevel(playerSrc: string|number): number;
 
 /**
  * A getter for [SET_PLAYER_WEAPON_DAMAGE_MODIFIER](#\_0xCE07B9F7817AADA3).
@@ -1349,21 +1349,21 @@ declare function IsPedUsingActionMode(ped: number): boolean;
 /**
  * IS_PLAYER_ACE_ALLOWED
  */
-declare function IsPlayerAceAllowed(playerSrc: string, object: string): boolean;
+declare function IsPlayerAceAllowed(playerSrc: string|number, object: string): boolean;
 
 /**
  * Requests whether or not the commerce data for the specified player has loaded.
  * @param playerSrc The player handle
  * @return A boolean.
  */
-declare function IsPlayerCommerceInfoLoaded(playerSrc: string): boolean;
+declare function IsPlayerCommerceInfoLoaded(playerSrc: string|number): boolean;
 
 /**
  * Requests whether or not the commerce data for the specified player has loaded from Tebex.
  * @param playerSrc The player handle
  * @return A boolean.
  */
-declare function IsPlayerCommerceInfoLoadedExt(playerSrc: string): boolean;
+declare function IsPlayerCommerceInfoLoadedExt(playerSrc: string|number): boolean;
 
 /**
  * This will return true if the player is evading wanted level, meaning that the wanted level stars are blink.
@@ -1372,14 +1372,14 @@ declare function IsPlayerCommerceInfoLoadedExt(playerSrc: string): boolean;
  * @param playerSrc The target player
  * @return boolean value, depending if the player is evading his wanted level or not.
  */
-declare function IsPlayerEvadingWantedLevel(playerSrc: string): boolean;
+declare function IsPlayerEvadingWantedLevel(playerSrc: string|number): boolean;
 
 /**
  * IS_PLAYER_USING_SUPER_JUMP
  * @param playerSrc The player handle
  * @return A boolean.
  */
-declare function IsPlayerUsingSuperJump(playerSrc: string): boolean;
+declare function IsPlayerUsingSuperJump(playerSrc: string|number): boolean;
 
 /**
  * IS_PRINCIPAL_ACE_ALLOWED
@@ -1417,13 +1417,13 @@ declare function IsVehicleWindowIntact(vehicle: number, windowIndex: number): bo
  * Requests the commerce data for the specified player, including the owned SKUs. Use `IS_PLAYER_COMMERCE_INFO_LOADED` to check if it has loaded.
  * @param playerSrc The player handle
  */
-declare function LoadPlayerCommerceData(playerSrc: string): void;
+declare function LoadPlayerCommerceData(playerSrc: string|number): void;
 
 /**
  * Requests the commerce data from Tebex for the specified player, including the owned SKUs. Use `IS_PLAYER_COMMERCE_INFO_LOADED` to check if it has loaded.
  * @param playerSrc The player handle
  */
-declare function LoadPlayerCommerceDataExt(playerSrc: string): void;
+declare function LoadPlayerCommerceDataExt(playerSrc: string|number): void;
 
 /**
  * Reads the contents of a text file in a specified resource.
@@ -1483,7 +1483,7 @@ declare function NetworkGetNetworkIdFromEntity(entity: number): number;
  * NETWORK_GET_VOICE_PROXIMITY_OVERRIDE
  * @param playerSrc The player handle
  */
-declare function NetworkGetVoiceProximityOverride(playerSrc: string): number[];
+declare function NetworkGetVoiceProximityOverride(playerSrc: string|number): number[];
 
 /**
  * PERFORM_HTTP_REQUEST_INTERNAL
@@ -1612,7 +1612,7 @@ declare function RemoveWeaponFromPed(ped: number, weaponHash: string | number): 
  * @param playerSrc The player handle
  * @param skuId The ID of the SKU.
  */
-declare function RequestPlayerCommerceSession(playerSrc: string, skuId: number): void;
+declare function RequestPlayerCommerceSession(playerSrc: string|number, skuId: number): void;
 
 /**
  * Writes the specified data to a file in the specified resource.
@@ -2550,7 +2550,7 @@ declare function SetPlayerControl(player: string, bHasControl: boolean, flags: n
  * @param playerSrc The player to set the culling radius for.
  * @param radius The radius.
  */
-declare function SetPlayerCullingRadius(playerSrc: string, radius: number): void;
+declare function SetPlayerCullingRadius(playerSrc: string|number, radius: number): void;
 
 /**
  * Simply sets you as invincible (Health will not deplete).
@@ -2573,7 +2573,7 @@ declare function SetPlayerModel(player: string, model: string | number): void;
  * @param playerSrc The player to set the routing bucket for.
  * @param bucket The bucket ID.
  */
-declare function SetPlayerRoutingBucket(playerSrc: string, bucket: number): void;
+declare function SetPlayerRoutingBucket(playerSrc: string|number, bucket: number): void;
 
 /**
  * Call SET_PLAYER_WANTED_LEVEL_NOW for immediate effect
@@ -2919,7 +2919,7 @@ declare function TaskWarpPedIntoVehicle(ped: number, vehicle: number, seatIndex:
 /**
  * TEMP_BAN_PLAYER
  */
-declare function TempBanPlayer(playerSrc: string, reason: string): void;
+declare function TempBanPlayer(playerSrc: string|number, reason: string): void;
 
 /**
  * The backing function for TriggerClientEvent.
