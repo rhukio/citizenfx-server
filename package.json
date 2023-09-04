@@ -1,6 +1,6 @@
 {
   "name": "@rhukio/citizenfx-server",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Typings for the CitizenFX server JS API.",
   "main": "index.js",
   "private": false,
